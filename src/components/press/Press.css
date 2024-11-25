@@ -1,0 +1,55 @@
+#press {
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.prevbtn {
+  margin-left: 350px;
+}
+
+.nextbtn {
+  margin-right: 350px;
+}
+
+.btnbg {
+  background-color: purple; /* Adjust this shade of purple as needed */
+  transition: background-color 0.3s ease;
+}
+
+.btnbg:hover {
+  background-color: darkviolet; /* Slightly darker shade on hover */
+}
+
+.box-hover:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-3d {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+
+.transform-gpu {
+  transform: perspective(1000px);
+}
+
+.transform-gpu:hover {
+  transform: perspective(1000px) rotateX(3deg) rotateY(-3deg);
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}

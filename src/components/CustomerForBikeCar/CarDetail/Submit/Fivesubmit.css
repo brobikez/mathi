@@ -1,0 +1,79 @@
+/* Remove any background color from the profile card or main container */
+.profile-card {
+  background-color: transparent; /* Set to transparent or simply remove this line */
+}
+
+.min-h-screen {
+  background: none; /* Make sure there's no background */
+}
+
+/* Text Colors */
+.text-gray-800 {
+  color: #2d3748; /* Ensure text is visible */
+}
+
+.text-white {
+  color: #ffffff; /* White text for visibility on dark backgrounds */
+}
+
+/* Profile Card Styling */
+.profile-card {
+  width: 90%; /* Set the width to 90% of the parent container */
+  max-width: 900px; /* Prevent it from getting too wide */
+  margin: 20px auto; /* Center the card with vertical spacing */
+  background-color: white; /* Set a white background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Inner padding for spacing */
+  transition: transform 0.3s ease; /* Smooth scale effect on hover */
+}
+
+/* Hover effect to slightly elevate the card */
+.profile-card:hover {
+  transform: scale(1.02); /* Slightly increase size on hover */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .profile-card {
+      width: 95%; /* Adjust width for smaller screens */
+      padding: 15px; /* Reduce padding on smaller screens */
+  }
+}
+
+.profile-card h2, 
+.profile-card h3 {
+  font-weight: bold; /* Bold headings */
+  margin: 10px 0; /* Margin for spacing */
+  text-align: center; /* Center align text */
+}
+
+.profile-card p {
+  margin: 0 0 10px; /* Margin for paragraph spacing */
+  line-height: 1.6; /* Increase line-height for readability */
+  text-align: justify; /* Justify text for a neat look */
+}
+
+/* Optional: Responsive Image */
+.profile-card img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Match card corners */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+/* Button styling if needed */
+.profile-card button {
+  margin-top: 10px; /* Space above button */
+  padding: 10px 20px; /* Padding for the button */
+  background-color: #7c3278; /* Blue background for buttons */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.profile-card button:hover {
+  background-color: #e93204; /* Darker blue on hover */
+}

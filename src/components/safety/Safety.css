@@ -1,0 +1,119 @@
+/* Safety.css */
+
+.safety-container {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.driver-btn, .customer-btn {
+  background-color: #7c2e7c;
+}
+
+.btn:hover {
+  background-color: #5a1a5a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 2rem;
+
+  color: black;
+  font-weight: bold;
+
+}
+
+.safety-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.safety-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.safety-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.safety-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.safety-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.safety-item p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  background-color: #7c2e7c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #5a1a5a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.prev-btn {
+  margin-left: auto;
+}
+
+.next-btn {
+  margin-right: auto;
+}

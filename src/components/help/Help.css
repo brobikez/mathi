@@ -1,0 +1,60 @@
+
+
+/* Container for each question and troubleshooting point */
+.question-box, .troubleshoot-box {
+  background-color: #f9f9f9; /* Light background color for the box */
+  border: 1px solid #ddd; /* Light border for the box */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Padding inside the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.question-box:hover, .troubleshoot-box:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 6px 12px whitesmoke; /* Darker shadow on hover */
+}
+
+/* Button styling */
+.learn-more-button {
+  background-color: #f97316; /* Orange color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #f97316d9; /* Slightly darker orange */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Sliding effect for troubleshooting section */
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image styling */
+.gallery-image {
+  border: 2px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.gallery-image:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 6px 12px orangered; /* Darker shadow on hover */
+}

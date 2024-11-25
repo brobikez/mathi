@@ -1,0 +1,13 @@
+.animate-3d {
+    animation: rotate3d 2s ease-in-out forwards;
+    transform-style: preserve-3d;
+  }
+  
+  @keyframes rotate3d {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }

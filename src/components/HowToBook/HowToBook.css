@@ -1,0 +1,17 @@
+/* HowToBook.css */
+/* HowToBook.css */
+
+/* Image 3D Effect with Orange Shadow */
+.image-3d {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Default shadow */
+  }
+  
+  .image-3d:hover {
+    transform: rotateY(20deg) rotateX(10deg);
+    box-shadow: 0 20px 30px orangered; /* Orange shadow on hover */
+  }
+  
+

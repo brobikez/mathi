@@ -1,0 +1,94 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: space-around; /* Space cards evenly */
+  margin-top: 2.5rem; /* mt-10 in Tailwind */
+  padding: 20px; /* Padding around the cards */
+  background-color: #f9f9f9; /* Light background for the container */
+}
+
+.card {
+  max-width: 300px; /* Equivalent to max-w-sm in Tailwind */
+  border: 2px solid #d1d5db; /* Set border color and width */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow of content */
+  background-color: rgb(204, 89, 204); /* Light pink background for the card */
+  padding: 20px; /* p-4 in Tailwind */
+  margin: 10px; /* Margin between cards */
+  display: flex; /* Use flexbox for positioning */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  transition: transform 0.3s; /* Smooth scale transition on hover */
+}
+
+/* Image styles */
+.card img {
+  width: 100%; /* Full width */
+  height: 192px; /* h-48 in Tailwind */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 8px; /* Match the border radius of the card */
+}
+
+/* Content styles */
+.card-content {
+  position: relative; /* For positioning text above the background */
+  z-index: 1; /* Bring text above background color */
+  text-align: center; /* Center align text */
+  flex-grow: 1; /* Allow content to take available space */
+}
+
+/* Heading styles */
+.card h3,
+.card h2 {
+  font-weight: bold; /* Bold text */
+  font-size: 1.25rem; /* text-xl in Tailwind */
+  margin-bottom: 0.5rem; /* mb-2 in Tailwind */
+}
+
+/* Paragraph styles */
+.card p {
+  font-weight: bold; /* Make description bold */
+  color: #111111; /* text-gray-700 in Tailwind */
+  font-size: 1rem; /* text-base in Tailwind */
+}
+
+/* Button styles */
+.card button {
+  margin-top: 10px; /* Space between description and button */
+  padding: 10px 20px; /* Add padding for the button */
+  font-weight: bold; /* Make button text bold */
+  background-color: #460340; /* Button background color */
+  color: rgb(243, 234, 234); /* White text color for the button */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Button hover effect */
+.card button:hover {
+  background-color: #f74e0b; /* Darker shade on hover */
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: scale(1.05); /* Slightly scale up the card on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%; /* Full width on smaller screens */
+    margin: 10px auto; /* Center cards on smaller screens */
+  }
+
+  .card-container {
+    justify-content: center; /* Center the cards in mobile view */
+  }
+}
+
+@media (min-width: 769px) {
+  .card-container {
+    justify-content: space-around; /* Space cards evenly in desktop view */
+  }
+}

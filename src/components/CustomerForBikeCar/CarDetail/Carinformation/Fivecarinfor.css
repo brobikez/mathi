@@ -1,0 +1,126 @@
+/* FourCarinfor.css */
+
+.car-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the cards */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+  }
+  
+  .car-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the cards */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Max width for grid */
+  }
+  
+  .car-card {
+    background-color: #fff; /* Background for each card */
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Clip child elements */
+    width: 600px; /* Fixed width for the cards */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space out elements evenly */
+    height: 400px; /* Fixed height for uniformity */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .car-card.selected {
+    transform: scale(1.05); /* Scale up when selected */
+  }
+  
+  .car-image-container {
+    width: 100%; /* Full width of the card */
+    height: 200px; /* Fixed height for uniformity */
+    overflow: hidden; /* Clip overflow */
+  }
+  
+  .car-image {
+    width: 100%; /* Full width of the card */
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area without distortion */
+  }
+  
+  .car-content {
+    padding: 15px; /* Space around text */
+    text-align: center;
+  }
+  
+  .car-mileage {
+    font-size: 1.2rem;
+    color: #666; /* Slightly lighter text color for mileage */
+    margin-bottom: 15px;
+  }
+  
+  .select-car-button-container {
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center the button */
+  }
+  
+  .select-car-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #612557; /* Button background color */
+    border: 1px solid #ccc; /* Border for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease;
+    font-weight: bold; /* Make the button text bold */
+    color: white; /* Set the text color to white */
+    width: 100%; /* Full width button for better aesthetics */
+  }
+  
+  .select-car-button.selected {
+    background-color: #351733; /* Darker background color when selected */
+    color: white; /* Ensure the text remains white */
+    border-color: #351733; /* Same color for border */
+  }
+  
+  .confirm-booking-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Space above the button */
+  }
+  
+  .confirm-your-booking-button {
+    background-color: #773e6d; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 15px 30px; /* More padding for a bigger button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s; /* Transition for hover effect */
+  }
+  
+  .confirm-your-booking-button:hover {
+    background-color: #5e2b53; /* Darker shade on hover */
+  }
+  
+  .dropdown-container {
+    margin: 20px 0; /* Margin above and below the dropdown */
+  }
+  
+  .car-select {
+    padding: 10px; /* Padding inside the dropdown */
+    font-size: 1rem; /* Font size */
+    border: 1px solid #ccc; /* Border for the dropdown */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 200px; /* Fixed width for the dropdown */
+    max-width: 100%; /* Responsive to smaller screens */
+  }
+  
+  .car-select-label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,94 @@
+/* Container for 3D effects with stronger perspective */
+.perspective-container {
+  perspective: 1500px;
+}
+/* Container that wraps the images and About Us section */
+.about-us-container {
+  border: 4px solid white; /* Border around the container */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow around the container */
+  padding: 20px; /* Space between border and content */
+  background-color: #ffffff; /* Background color for contrast */
+  border-radius: 20px; /* Rounded corners */
+}
+
+/* Existing styles for individual images */
+img {
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.8); /* Shadow with orange hue on hover */
+}
+
+/* 3D effect with layers and depth for headings */
+.three-d-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.7s ease-in-out, color 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.three-d-heading::before {
+  content: attr(data-text); /* Duplicate text for 3D layer */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: white; /* Layer color */
+  transform: translate3d(-10px, -10px, -10px); /* Depth effect */
+  transition: transform 0.7s ease-in-out;
+}
+
+.three-d-heading:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+  color: #ff8c00; /* Change color on hover */
+}
+
+.three-d-heading:hover::before {
+  transform: translate3d(0px, 0px, -30px); /* Increase depth on hover */
+}
+
+/* Styling for Vision and Mission headings */
+.vision-heading, .mission-heading {
+  margin-bottom: 1.5rem; /* Space below heading */
+  margin-top: 2.5rem; /* Space above heading */
+}
+
+/* 3D effect for paragraphs with shadows */
+.three-d-paragraph {
+  font-size: 1.25rem;
+  color: #000;
+  position: relative;
+  padding: 1rem;
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.three-d-paragraph::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -1;
+  transform: translate3d(10px, 10px, -10px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.three-d-paragraph:hover {
+  color: purple; /* Change text color on hover */
+  transform: translate3d(-5px, -5px, 10px);
+}
+
+.three-d-paragraph:hover::before {
+  transform: translate3d(0px, 0px, -20px); /* Increase depth on hover */
+}

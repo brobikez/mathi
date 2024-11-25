@@ -1,0 +1,27 @@
+.formcontent{
+    @apply w-full md:w-3/4 lg:w-3/4 flex justify-center flex-col mx-auto;
+}
+.formtitle{
+    @apply text-lg md:text-xl font-semibold md:mb-4 p-2;
+}
+.holeformdiv{
+    @apply shadow-sm shadow-orange-300 p-2;
+}
+.specificcontentdiv{
+    @apply flex flex-col md:flex-row justify-center w-full  mx-auto mb-1;
+}
+.label{
+    @apply w-full md:w-2/5 lg:w-1/4 p-1 md:p-2 text-base md:text-lg text-black;
+}
+.inputanderrordiv{
+    @apply flex flex-col w-full md:w-1/2 lg:w-1/2 xl:w-2/5;
+}
+.inputbox{
+    @apply text-base md:text-lg p-2 rounded;
+}
+.errormessage{
+    @apply text-red-500 text-sm mt-1 px-1
+}
+.mandatorystar{
+    @apply text-red-600;
+} 

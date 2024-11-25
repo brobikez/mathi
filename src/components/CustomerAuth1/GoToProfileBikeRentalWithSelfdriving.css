@@ -1,0 +1,204 @@
+  /* Profile Card */
+  .profile-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+  }
+  .profile-card:hover{
+    box-shadow: 0 20px 20px rgba(224, 224, 224, 0.836);
+
+  }
+
+  /* Header */
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: linear-gradient(90deg, #4c6ef5, #7950f2);
+    color: white;
+    border-radius: 16px 16px 0 0;
+
+  }
+
+  /* User Avatar */
+  .profile-header img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    transition: transform 0.4s ease;
+  }
+  .profile-header img:hover {
+    transform: rotate(10deg);
+  }
+  
+  /* Coin Container */
+  .coin-container {
+    perspective: 1000px;
+  }
+  
+  .coin-3d {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+  
+  .coin-3d .coin-front,
+  .coin-3d .coin-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 120px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f1c40f, #e67e22);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+  }
+  
+  .coin-3d .coin-front {
+    background: linear-gradient(145deg, #f1c40f, #f39c12);
+  }
+  .coin-3d .coin-back {
+    background: linear-gradient(145deg, #e67e22, #d35400);
+    transform: rotateY(180deg);
+  }
+  .coin-3d:hover {
+    transform: rotateY(360deg);
+  }
+  
+  /* Profile Details */
+  .profile-details {
+    padding: 24px;
+    background-color: #f8f9fa;
+  }
+  .profile-details div {
+    margin-bottom: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .profile-details div:hover {
+    background-color: #eceff1;
+    transform: scale(1.05);
+  }
+  
+  /* Payment Methods and Recent Rides */
+  .bg-white {
+    background-color: #ffffff;
+  }
+  
+  .payment-methods,
+  .recent-rides {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .payment-methods:hover,
+  .recent-rides:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .payment-methods li,
+  .recent-rides li {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .payment-methods li:hover,
+  .recent-rides li:hover {
+    background-color: #eceff1;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  .animate-slideIn {
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-popIn {
+    animation: popIn 0.6s ease-out;
+  }
+  
+  @keyframes popIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+  .animate-buttonHover:hover {
+    background-color: #38b2ac;
+    box-shadow: 0 10px 10px rgba(45, 46, 45, 0.555);
+
+  }
+  
+  /* Card Detail Hover */
+  .animate-cardDetailHover {
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .animate-cardDetailHover:hover {
+    background-color: #e2e8f0;
+    transform: scale(1.02) rotate(-2deg);
+  }
+  
+  /* Text Hover */
+  .animate-textHover {
+    transition: color 0.3s, text-shadow 0.3s;
+  }
+  .animate-textHover:hover {
+    color: #38b2ac;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Footer Button */
+  .footer-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #f8f9fa;
+  }
+  .footer-button button {
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  .footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: f8f9fa;
+  }

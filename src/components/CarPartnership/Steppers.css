@@ -1,0 +1,42 @@
+/* StepperHome.css */
+
+.step-item {
+  @apply relative flex flex-col flex-wrap justify-center items-center w-64 md:w-72 lg:w-80; /* Increase width for larger screens */
+}
+
+.step-item:not(:first-child):before {
+  @apply content-[''] bg-black absolute w-full h-[2px] right-2/4 top-1/4 -translate-y-2/4;
+}
+
+.step {
+  @apply w-10 h-10 flex items-center justify-center z-10 relative bg-slate-700 rounded-full md:text-xl font-semibold text-white;
+}
+
+.active .step {
+  @apply bg-orange-400 md:p-6   ; /* Increase padding for active step */
+}
+
+.complete .step {
+  @apply bg-orange-400 text-black;
+}
+
+.complete:not(:first-child):before,
+.active:not(:first-child):before {
+  @apply bg-black  ;
+}
+
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .step-item {
+    @apply w-32; /* Smaller width for mobile screens */
+  }
+  
+  .step {
+    @apply w-8 h-8; /* Smaller size for the step circle */
+  }
+}
+
+.next-btn{
+    @apply mx-4  p-2 w-36 text-lg  bg-fuchsia-900 text-white font-semibold;
+}
