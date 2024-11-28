@@ -3,6 +3,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Title from '../Title/Title';
 
 const FAQ = () => {
     const faq = [
@@ -35,16 +36,17 @@ const FAQ = () => {
   return (
     <>
     {/* FAQ */}
-    <div className='flex-row justify-center items-center mx-auto max-w-6xl '>
-            <h1 className='text-2xl md:text-3xl font-bold text-center p-2'>FAQ</h1>
+    <Title title="Faq" />
+    <div className='flex-row justify-center items-center mx-auto max-w-6xl md:my-12 '>
+        
         {faq.map((item, index) => (
-          <div key={index} className='m-2 shadow-md'>
+          <div key={index} className='m-2 shadow-md bg-orange'>
             <Accordion key={index}
                 expanded={expanded === `panel${index}`}
                 onChange={handleChange(`panel${index}`)}
             >
                 <AccordionSummary className='' expandIcon={<ExpandMoreIcon />}>
-                <h1 className='text-lg md:text-xl font-medium '>{item.heading}</h1>
+                <h1 className='text-lg md:text-xl font-medium  '>{item.heading}</h1>
                 </AccordionSummary>
                 <AccordionDetails>
                 <h1 className='text-lg'>{item.description}</h1>

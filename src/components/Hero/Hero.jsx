@@ -1,64 +1,144 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import bgVideo from "./bg-vdo.mp4";
+import React from "react";
+import "react-datepicker/dist/react-datepicker.css";
+import "./Hero.css"; 
+import vdo from "./bg-vdo.mp4";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup"; // Import Yup
 
-export default function VacationForm() {
-  const [currentLocation, setCurrentLocation] = useState('');
-  const [destination, setDestination] = useState('');
-  const [showCoin, setShowCoin] = useState(false);
-  const navigate = useNavigate();
+// Define validation schema using Yup
+const validationSchema = Yup.object({
+  currentLocation: Yup.string().required("Current Location is required"),
+  destination: Yup.string().required("Destination is required"),
+});
 
-  const handleSearchClick = () => {
-    if (currentLocation && destination) {
-      setShowCoin(true);
-      setTimeout(() => {
-        setShowCoin(false);
-        navigate('/CustomerForBikeCar'); // Redirect to CustomerForBikeCar page
-      }, 2000);
-    } else {
-      alert('Please fill in both Current Location and Destination!');
-    }
+export default function Hero() {
+
+  // Handle form submission
+  const handleSubmit = (values) => {
+    alert(`Searching from ${values.currentLocation} to ${values.destination}`);
   };
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center bg-transparent">
-      <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover opacity-100">
-        <source src={bgVideo} type="video/mp4" />
+    <div className="h-screen flex justify-center items-center hero">
+      <video autoPlay loop muted className="video-bg">
+        <source src={vdo} type="video/mp4" />
       </video>
-      <div className="relative flex items-center justify-center w-[480px] h-[480px] rounded-full bg-gradient-to-br from-purple-500 to-orange-500 shadow-2xl transform hover:scale-105 transition duration-500">
-        <div className="relative bg-black bg-opacity-50 backdrop-blur-md p-10 rounded-full w-[400px] h-[400px] flex flex-col justify-center items-center text-center shadow-xl border border-white border-opacity-20">
-          <h2 className="text-white text-3xl font-semibold mb-8 hover:translate-x-1 hover:translate-y-1 hover:shadow-lg">
-            Find Your Destination
-            {showCoin && (
-              <span className="inline-flex ml-4">
-                <div className="relative w-12 h-12 bg-yellow-400 rounded-full shadow-lg flex items-center justify-center text-black font-bold text-lg animate-bounce">
-                  +10
-                </div>
-              </span>
-            )}
-          </h2>
-          <form className="space-y-5 w-10/12" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="text"
-              placeholder="Current Location"
-              className="w-full px-5 py-3 text-white bg-transparent border border-white/60 rounded-md focus:outline-none"
-              value={currentLocation}
-              onChange={(e) => setCurrentLocation(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Destination"
-              className="w-full px-5 py-3 text-white bg-transparent border border-white/60 rounded-md focus:outline-none"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-            />
-            <button
-              className="w-full bg-orange-500 text-white py-3 rounded-md font-semibold hover:bg-orange-600 transition duration-300 shadow-lg"
-              onClick={handleSearchClick}
-            >
-              Search
-            </button>
-          </form>
+
+      {/* Large Screen Container */}
+      <div className="mx-1 p-1 sm:p-7 rounded-full bg-gradient-to-br from-purple-500 to-orange-500 sm:flex hidden justify-center items-center">
+        <div className="bg-black bg-opacity-50 backdrop-blur-md p-16 py-24 rounded-full">
+          <h1 className="text-white text-4xl p-4 font-semibold capitalize">Find your destination</h1>
+
+          {/* Formik Form */}
+          <Formik
+            initialValues={{
+              currentLocation: "",
+              destination: "",
+            }}
+            validationSchema={validationSchema} // Yup validation schema
+            onSubmit={handleSubmit}
+          >
+            <Form>
+              {/* Current Location Input */}
+              <div className="my-5">
+                <Field
+                  type="text"
+                  name="currentLocation"
+                  placeholder="Current Location"
+                  className="p-3 text-lg rounded-2xl w-full"
+                />
+                <ErrorMessage
+                  name="currentLocation"
+                  component="div"
+                  className="text-red-500 text-lg"
+                />
+              </div>
+
+              {/* Destination Input */}
+              <div className="my-5">
+                <Field
+                  type="text"
+                  name="destination"
+                  placeholder="Destination"
+                  className="p-3 text-lg rounded-2xl w-full"
+                />
+                <ErrorMessage
+                  name="destination"
+                  component="div"
+                  className="text-red-500 text-lg"
+                />
+              </div>
+
+              {/* Search Button */}
+              <div className="flex justify-center items-center">
+                <button
+                  type="submit"
+                  className="bg-orange-500 hover:bg-orange-600 p-2 py-3 px-12 my-3 font-medium text-xl text-white rounded-full"
+                >
+                  Search
+                </button>
+              </div>
+            </Form>
+          </Formik>
+        </div>
+      </div>
+
+      {/* Small Screen Container */}
+      <div className="mx-1 p-2 sm:p-7 rounded-3xl bg-gradient-to-br from-purple-500 to-orange-500 flex sm:hidden justify-center items-center">
+        <div className="bg-black bg-opacity-50 backdrop-blur-md p-4 py-10 rounded-3xl w-full sm:w-auto">
+          <h1 className="text-white text-3xl p-4 font-semibold capitalize">Find your destination</h1>
+
+          {/* Formik Form */}
+          <Formik
+            initialValues={{
+              currentLocation: "",
+              destination: "",
+            }}
+            validationSchema={validationSchema} // Yup validation schema
+            onSubmit={handleSubmit}
+          >
+            <Form>
+              {/* Current Location Input */}
+              <div className="my-5">
+                <Field
+                  type="text"
+                  name="currentLocation"
+                  placeholder="Current Location"
+                  className="p-3 text-lg w-full rounded-3xl"
+                />
+                <ErrorMessage
+                  name="currentLocation"
+                  component="div"
+                  className="text-red-500 text-lg"
+                />
+              </div>
+
+              {/* Destination Input */}
+              <div className="my-5">
+                <Field
+                  type="text"
+                  name="destination"
+                  placeholder="Destination"
+                  className="p-3 text-lg w-full rounded-3xl"
+                />
+                <ErrorMessage
+                  name="destination"
+                  component="div"
+                  className="text-red-500 text-lg"
+                />
+              </div>
+
+              {/* Search Button */}
+              <div className="flex justify-center items-center">
+                <button
+                  type="submit"
+                  className="bg-orange-500 hover:bg-orange-600 p-3 px-10 my-3 font-medium text-xl text-white rounded-full"
+                >
+                  Search
+                </button>
+              </div>
+            </Form>
+          </Formik>
         </div>
       </div>
     </div>

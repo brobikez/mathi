@@ -5,23 +5,6 @@
   overflow: hidden;
 }
 
-.prevbtn {
-  margin-left: 350px;
-}
-
-.nextbtn {
-  margin-right: 350px;
-}
-
-.btnbg {
-  background-color: purple; /* Adjust this shade of purple as needed */
-  transition: background-color 0.3s ease;
-}
-
-.btnbg:hover {
-  background-color: darkviolet; /* Slightly darker shade on hover */
-}
-
 .box-hover:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }

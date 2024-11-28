@@ -32,6 +32,9 @@ import ChooseYourPartnership from "./components/CarPartnership/CarPartnerForm/Ch
 import RegistedCarPartnerHome from "./components/CarPartnership/RegistedCarPartnerHome";
 import EditRentalDuration from "./components/CarPartnership/EditRentalDuration";
 import ProfileForVehiclePartner from "./components/CarPartnership/ProfileForVehiclePartner/ProfileForVehiclePartner";
+import ProfileForVehiclePartnerBeforeRegister from "./components/CarPartnership/ProfileForVehiclePartner/ProfileForVehiclePartnerBeforeRegister";
+import RegisteredNavabarHomePage from "./components/CarPartnership/RegisteredNavbar/RegisteredNavabarHomePage";
+
 
 
 //fay
@@ -76,7 +79,13 @@ import CustomerMainPage from "./components/CustomerForBikeCar/CustomerMainpage/C
 
 //deena
 
-import DriverDashboard from "./components/DriverDashboard/DriverDashboard"; 
+
+import Cancel from "./components/DriverDashboard/cancel";
+import Completed from "./components/DriverDashboard/completed"; 
+import Driver from "./components/DriverDashboard/driver"; 
+
+import PopularPlacesNearMe from "./components/PopularPlaces/popularplaces";
+
 
 
          
@@ -101,8 +110,8 @@ function App() {
         <Route path="/userSignup" element={<UserSignup />} />
      
         <Route path="/settings" element={<Settings />} />
-        <Route path="Help" element={<Help />} />
-        <Route path="Press" element={<Press />} />
+        <Route path="/Help" element={<Help />} />
+        <Route path="/Press" element={<Press />} />
         <Route path="/safety" element={<Safety />} />
         <Route path="/termsandcondition" element={<TermsAndConditions />} />
 
@@ -118,10 +127,11 @@ function App() {
         <Route path="/registedcarpartnerhome" element={<RegistedCarPartnerHome />} />
         <Route path="/editrentalduration" element={<EditRentalDuration />} />
         <Route path="/profileforvehiclepartner" element={<ProfileForVehiclePartner />} />
+        <Route path="/profileforvehiclepartnerberoreregister" element={<ProfileForVehiclePartnerBeforeRegister />} />
+        <Route path="/registednavbarhomepage" element={<RegisteredNavabarHomePage />} />
 
 
         <Route path="/CustomerForBikeCar" element={<CustomerMainPage />} />
-
         <Route path="/carinformation" element={<Carinformation />} />
         <Route path="/fourcarinfor" element={<Fourcarinfor />} />
        <Route path="/fivecarinfor" element={<Fivecarinfor />} />
@@ -141,7 +151,6 @@ function App() {
       <Route path="/fourbikebook" element={<Fourbikebook />} />
       <Route path="/fivebikebook" element={<Fivebikebook />} />
       <Route path="/sevenbikebook" element={<Sevenbikebook />} />
-
       <Route path="/fourbikesubmit" element={<Fourbikesubmit />} />
       <Route path="/fivebikesubmit" element={<Fivebikesubmit />} />
       <Route path="/sevenbikesubmit" element={<Sevenbikesubmit />} />
@@ -151,7 +160,12 @@ function App() {
 
         {/* deena */}
 
-        <Route path="/DriverDashboard" element={<DriverDashboard />} />
+        <Route path="/DriverDashboard" element={<Driver />} />
+        <Route path="/rides" element={<Cancel />} />
+        <Route path="/complete" element={<Completed />} />
+        <Route path="/popularplace" element={<PopularPlacesNearMe />} />
+
+
 
 
 

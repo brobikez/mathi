@@ -1,16 +1,14 @@
 import React from 'react';
+import Title from '../Title/Title';
 
 const HostingCalculation = () => {
   return (
-    <div className="bg-white py-9">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-black text-center  transition duration-300">
-          Hosting Stats
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6">
+    <div className="py-4 md:py-10">
+      <Title title="Hosting stats" />
+      <div className="container mx-auto px-2 md:px-4 py-2 pt-4 md:pt-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6 border-2 border-red-600">
           {[
-            { color: "bg-purple-700", icon: "fas fa-check-circle", title: "Verified Bikes", text: "Total Verified Bikes: 1000" },
+            { color: "bg-purple-800", icon: "fas fa-check-circle", title: "Verified Bikes", text: "Total Verified Bikes: 1000" },
             { color: "bg-purple-700", icon: "fas fa-shield-alt", title: "Trusted Bikes", text: "Total Trusted Bikes: 800" },
             { color: "bg-purple-700", icon: "fas fa-road", title: "KMs Driven", text: "Total KMs Driven: 500,000" },
             { color: "bg-purple-700", icon: "fas fa-plane", title: "Airports", text: "Serving 20+ Airports" },

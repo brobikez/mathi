@@ -12,10 +12,17 @@ import EarningPoint from './EarningPoint';
 import RateUsProfile from './RateUsprofile';
 import FaqProfile from './FaqProfile';
 import AdvantageofPartnership from './AdvantageofPartnership';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import { FaBars } from 'react-icons/fa';
 
 const ProfileForVehiclePartner = () => {
   const [activeSection, setActiveSection] = useState('livelocation'); // Default active section
   const [isModalOpen, setIsModalOpen] = useState(false); // State to toggle modal visibility
+
+  const [profilePhoto, setProfilePhoto] = useState("");
+  const [error, setError] = useState("");
+  
 
   // Function to handle section click
   const handleSectionClick = (section) => {
@@ -28,25 +35,99 @@ const ProfileForVehiclePartner = () => {
     setIsModalOpen((prev) => !prev);
   };
 
+
+
+  const handlePhotoChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const validTypes = ["image/jpeg", "image/png"];
+      if (!validTypes.includes(file.type)) {
+        setError("Only .png and .jpg files are allowed");
+        return;
+      }
+      setError("");
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        setProfilePhoto(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const triggerFileInput = () => {
+    document.getElementById("file-upload").click();
+  };
+
   return (
-    <div className="flex flex-col min-h-screen md:flex-row">
+    <div className="flex flex-col min-h-screen md:flex-row ">
       {/* Button to toggle modal on mobile */}
-      <div className="md:hidden mb-4">
-        <button
-          onClick={toggleModal}
-          className="p-2 bg-blue-500 text-white rounded-md">
-          Open Menu
-        </button>
+      <div className="md:hidden md:mb-4 flex justify-between p-2 md:p-0 bg-fuchsia-900">
+          <div className='profiletop '>
+          <Stack direction="row" spacing={2} className="items-center justify-center relative" onClick={toggleModal}>
+              <div className="flex flex-col px-2 items-start md:items-center">
+                <Avatar alt="Bharathi" src={profilePhoto} sx={{ width: 56, height: 56 }} className='border border-fuchsia-900'/>
+              </div>
+            </Stack>
+          </div>
+          <div>
+          <button
+            onClick={toggleModal}
+            className="p-2 text-white rounded-md ">
+            <FaBars size={30} />
+          </button>
+          </div>
+        
+          
       </div>
+      {/* <div className="md:hidden md:mb-4 flex justify-between py-1 pb-5 bg-orange-200">
+          <div className='profiletop'>
+          <Stack direction="row" spacing={2} className="items-center justify-center relative">
+              <div className="flex flex-col px-2 items-start md:items-center">
+                <Avatar alt="Bharathi" src={profilePhoto} sx={{ width: 56, height: 56 }} className='border border-fuchsia-900'/>
+                <p className="text-2xl lg:ml-2">Bharathi</p>
+                <p className=" py-1 text-base md:text-sm lg:text-lg">bharathi@123455gmail.com</p>
+              </div>
+            </Stack>
+
+            <div className="md:text-center px-2 mt-1">
+              <input
+                type="file"
+                accept="image/png, image/jpeg"
+                id="file-upload"
+                onChange={handlePhotoChange}
+                style={{ display: "none" }}
+              />
+              <button
+                type="button"
+                className="bg-fuchsia-900 text-white p-1 px-3"
+                onClick={triggerFileInput}
+              >
+                Edit Profile Photo
+              </button>
+              {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+            </div>
+
+          </div>
+          <div>
+          <button
+            onClick={toggleModal}
+            className="p-2 text-black rounded-md">
+            <FaBars size={30} />
+          </button>
+          </div>
+        
+          
+      </div> */}
 
       {/* Left Sidebar with Titles, hidden on desktop and shown as modal on mobile */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 md:hidden">
-          <div className="w-3/4 bg-white p-2 ">
+          <div className="w-4/5 bg-white ">
             <ProfileForVehiclePartnerTitle onSectionClick={handleSectionClick} />
             <button
               onClick={toggleModal}
-              className="absolute top-2 right-2 text-white font-bold text-lg">
+              className="absolute top-4 right-6 text-white font-bold text-2xl">
               X
             </button>
           </div>
@@ -54,7 +135,7 @@ const ProfileForVehiclePartner = () => {
       )}
 
       {/* Left Sidebar with Titles on medium and above screens */}
-      <div className="hidden md:block w-1/4 h-full">
+      <div className="hidden md:block w-1/4 md:w-1/2 lg:w-1/4 h-full">
         <ProfileForVehiclePartnerTitle onSectionClick={handleSectionClick} />
       </div>
 

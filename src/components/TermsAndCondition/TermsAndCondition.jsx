@@ -1,11 +1,12 @@
 import React from 'react';
+import Title from '../Title/Title';
 
 const TermsAndConditions = () => {
   return (
-    <div className="bg-white-100 min-h-screen flex items-center justify-center p-9">
-      <div className="bg-white p-9 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold mb-6 text-center">Terms and Conditions</h2>
-
+    <>
+    <Title title="Tearms and comditions" />
+    <div className="bg-white-100 min-h-screen flex items-center justify-center p-1 md:p-9">
+      <div className="p-3 md:p-6 rounded-lg shadow-lg">
         <section className="mb-6">
           <h3 className="text-xl font-semibold mb-2">1. Introduction</h3>
           <p>Welcome to Bro Bikes. By using our website [] and services, you agree to comply with these terms and conditions. If you do not agree, please refrain from using our services.</p>
@@ -82,6 +83,8 @@ const TermsAndConditions = () => {
         </section>
       </div>
     </div>
+    </>
+    
   );
 };
 

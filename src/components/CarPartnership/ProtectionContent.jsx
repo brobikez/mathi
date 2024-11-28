@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Title from '../Title/Title';
 
 export default function ProtectionContent() {
   const protection = [
@@ -20,13 +21,16 @@ export default function ProtectionContent() {
 
   ]
   return (
-    <ul className='flex flex-col md:flex-wrap mx-auto max-w-4xl'>
+    <div className='my-2 md:my-5 lg:my-10'>
+    <Title title="Advantages of a Partnership" />
+    <div className='lg:md-8'>
+    <ul className='flex flex-col md:flex-wrap mx-auto max-w-4xl md:my-6 px-1'>
       {protection.map((item, index) => (
         <li
           key={index}
           className='flex flex-col md:flex-row justify-center items-center mb-2 w-full'
         >
-          <div className='flex-shrink-0 w-full md:w-32 flex justify-center'>
+          <div className='flex-shrink-0 w-full md:w-32 flex justify-start md:justify-center'>
             <img
               src={item.imgSrc} alt={item.title} width="100px" height="100px" className='h-14 md:h-28 w-14 md:w-28 p-1 md:p-2 rounded-full border-1 border-black'
             />
@@ -38,5 +42,10 @@ export default function ProtectionContent() {
         </li>
       ))}
     </ul>
+
+    </div>
+    
+    </div>
+    
   );
 }

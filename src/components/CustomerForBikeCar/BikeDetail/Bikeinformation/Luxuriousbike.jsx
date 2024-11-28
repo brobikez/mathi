@@ -52,93 +52,94 @@ const CarSelector = () => {
   };
 
   return (
-    <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {/* Bold "Available Car" and dropdown centered */}
-      <label htmlFor="car-select" style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: '10px' }}>
-        Available Bike:
-      </label>
-      <select 
-        id="car-select" 
-        onChange={handleCarSelect} 
-        style={{ padding: '10px', marginBottom: '20px', fontSize: '16px', width: '200px' }}
-      >
-        <option value="">-- Select a Bike --</option>
-        <option value="royalenfield">royal-enfield</option>
-        <option value="r15">R15 </option>
-        <option value="rx100">rx100</option>
-        <option value="apache">Apache</option>
-      </select>
+    <div className='h-screen'> <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    {/* Bold "Available Car" and dropdown centered */}
+    <label htmlFor="car-select" style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: '10px' }}>
+      Available Bike:
+    </label>
+    <select 
+      id="car-select" 
+      onChange={handleCarSelect} 
+      style={{ padding: '10px', marginBottom: '20px', fontSize: '16px', width: '200px' }}
+    >
+      <option value="">-- Select a Bike --</option>
+      <option value="royalenfield">royal-enfield</option>
+      <option value="r15">R15 </option>
+      <option value="rx100">rx100</option>
+      <option value="apache">Apache</option>
+    </select>
 
-      {carImages.length > 0 && (
-        <div className="car-cards" style={{ display: 'flex', gap: '20px', marginTop: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {carImages.map((car, index) => (
-            <div
-              className="car-card-container"
-              key={index}
-              style={{
-                width: '300px',
-                textAlign: 'center',
-                border: '1px solid #ddd',
-                borderRadius: '10px',
-                padding: '20px',
-                backgroundColor: selectedCarIndex === index ? '#e0ffe0' : 'white',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                transition: 'transform 0.3s',
-                display: 'flex', /* Flex layout for each card */
-                flexDirection: 'column', /* Stack elements vertically */
-                alignItems: 'center' /* Align the button and image in the center */
-              }}
-            >
-              <img
-                src={car.imgSrc}
-                alt={`Car Image ${index + 1}`}
-                style={{ width: '100%', height: '200px', borderRadius: '5px' }}
-                className='car-card'
-              />
-              <div style={{ marginTop: '10px', fontSize: '16px', fontWeight: 'bold' }}>
-                Mileage: {car.mileage}
-              </div>
-
-              {/* Add Select Car Button aligned below image */}
-              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', width: '100%' }}>
-                <button
-                  className="select-btn bg-fuchsia-900"
-                  style={{
-                    padding: '12px',
-                    backgroundColor: selectedCarIndex === index ? '#4CAF50' : '', /* Remove inline background color */
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    width: '100%', /* Ensure the button takes full width of the card */
-                  }}
-                  onClick={() => handleSelectCar(index)}
-                >
-                  {selectedCarIndex === index ? 'Selected' : 'Select Bike'}
-                </button>
-              </div>
+    {carImages.length > 0 && (
+      <div className="car-cards" style={{ display: 'flex', gap: '20px', marginTop: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {carImages.map((car, index) => (
+          <div
+            className="car-card-container"
+            key={index}
+            style={{
+              width: '300px',
+              textAlign: 'center',
+              border: '1px solid #ddd',
+              borderRadius: '10px',
+              padding: '20px',
+              backgroundColor: selectedCarIndex === index ? '#e0ffe0' : 'white',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              transition: 'transform 0.3s',
+              display: 'flex', /* Flex layout for each card */
+              flexDirection: 'column', /* Stack elements vertically */
+              alignItems: 'center' /* Align the button and image in the center */
+            }}
+          >
+            <img
+              src={car.imgSrc}
+              alt={`Car Image ${index + 1}`}
+              style={{ width: '100%', height: '200px', borderRadius: '5px' }}
+              className='car-card'
+            />
+            <div style={{ marginTop: '10px', fontSize: '16px', fontWeight: 'bold' }}>
+              Mileage: {car.mileage}
             </div>
-          ))}
-        </div>
-      )}
 
-      {/* Confirmation Button */}
-      <Link to="/sevenbikebook">
-        <div className="confirm-booking-container text-center" style={{ marginTop: '20px' }}>
-          <button className="confirm-your-booking-button" style={{
-            padding: '12px 20px',
-            backgroundColor: 'fuchsia-900', /* Update background color */
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontSize: '16px'
-          }}>
-            Confirm Your Booking
-          </button>
-        </div>
-      </Link>
-    </div>
+            {/* Add Select Car Button aligned below image */}
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', width: '100%' }}>
+              <button
+                className="select-btn bg-fuchsia-900"
+                style={{
+                  padding: '12px',
+                  backgroundColor: selectedCarIndex === index ? '#4CAF50' : '', /* Remove inline background color */
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  width: '100%', /* Ensure the button takes full width of the card */
+                }}
+                onClick={() => handleSelectCar(index)}
+              >
+                {selectedCarIndex === index ? 'Selected' : 'Select Bike'}
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {/* Confirmation Button */}
+    <Link to="/sevenbikebook">
+      <div className="confirm-booking-container text-center" style={{ marginTop: '20px' }}>
+        <button className="confirm-your-booking-button" style={{
+          padding: '12px 20px',
+          backgroundColor: 'fuchsia-900', /* Update background color */
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          fontSize: '16px'
+        }}>
+          Confirm Your Booking
+        </button>
+      </div>
+    </Link>
+  </div></div>
+   
   );
 };
 

@@ -6,7 +6,9 @@ import CreateIcon from "@mui/icons-material/Create";
 // Yup validation schema
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
-  email: Yup.string().email("Invalid email format").required("Email is required"),
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
   pno: Yup.string()
     .length(10, "Phone number must be exactly 10 digits")
     .required("Phone number is required"),
@@ -21,7 +23,7 @@ const validationSchema = Yup.object({
 });
 
 const PersonalProfile = ({ profileTitle }) => {
-  const [successMessage, setSuccessMessage] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState("");
   const [userDetails, setUserDetails] = useState({
     name: "Jane Smith",
     email: "jane.smith@example.com",
@@ -29,8 +31,10 @@ const PersonalProfile = ({ profileTitle }) => {
     dob: "1990-10-15",
     address: "1/6 123 street mambakkam",
     gender: "Female",
-    photo: "https://imgcdn.stablediffusionweb.com/2024/5/6/2b1d888a-a22f-49d5-94b2-d9e1fb2c2640.jpg",
-    proof: "https://aadhaarcard.co.in/wp-content/uploads/2023/04/sample-aadhaar-card-800x445.png",
+    photo:
+      "https://imgcdn.stablediffusionweb.com/2024/5/6/2b1d888a-a22f-49d5-94b2-d9e1fb2c2640.jpg",
+    proof:
+      "https://aadhaarcard.co.in/wp-content/uploads/2023/04/sample-aadhaar-card-800x445.png",
   });
 
   const [editField, setEditField] = useState(null);
@@ -49,6 +53,7 @@ const PersonalProfile = ({ profileTitle }) => {
       reader.readAsDataURL(file);
     }
   };
+  
 
   return (
     <div>
@@ -71,7 +76,7 @@ const PersonalProfile = ({ profileTitle }) => {
             <Form>
               {[
                 { label: "Name", value: "name" },
-                { label: "Email Id", value: "email", type: "email" },
+                { label: "Email Id", value: "email", type: "email", editable: false },
                 { label: "Phone Number", value: "pno", type: "tel" },
                 { label: "Date of Birth", value: "dob", type: "date" },
                 { label: "Address", value: "address" },
@@ -86,12 +91,14 @@ const PersonalProfile = ({ profileTitle }) => {
                     </span>
                   </div>
                   <div className="w-full md:w-3/4 xl:w-2/5 flex items-center">
-                    {editField === item.value ? (
+                    {editField === item.value && item.editable !== false ? (
                       item.isImage ? (
                         <input
                           type="file"
                           accept="image/*"
-                          onChange={(e) => handleFileChange(e, setFieldValue, item.value)}
+                          onChange={(e) =>
+                            handleFileChange(e, setFieldValue, item.value)
+                          }
                           className="text-lg text-gray-800 border md:py-1 px-2 border-gray-400 flex-grow"
                         />
                       ) : (
@@ -112,7 +119,7 @@ const PersonalProfile = ({ profileTitle }) => {
                         {values[item.value]}
                       </span>
                     )}
-                    {editField !== item.value && (
+                    {item.editable !== false && editField !== item.value && (
                       <span className="ps-2">
                         <CreateIcon
                           onClick={() => handleEditClick(item.value)}

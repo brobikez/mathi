@@ -1,0 +1,29 @@
+/* Custom CSS to style the Next and Previous buttons */
+.slick-prev, .slick-next {
+    background-color: black !important;  /* Set background to black */
+    color: white !important;  /* Set text color to white */
+    border-radius: 50%;  /* Make buttons circular */
+    width: 40px;  /* Set width of buttons */
+    height: 40px;  /* Set height of buttons */
+    display: flex;  /* Use flexbox to center content */
+    align-items: center;  /* Vertically center content */
+    justify-content: center;  /* Horizontally center content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Optional: Add shadow */
+    font-size: 20px;  /* Adjust font size */
+  }
+  
+  /* Custom CSS for the hover effect */
+  .slick-prev:hover, .slick-next:hover {
+    background-color: #333;  /* Darker black on hover */
+    color: white !important;  /* Keep text color white */
+  }
+  
+  /* Optional: Adjust the positioning of the buttons */
+  .slick-prev {
+    left: -50px !important;  /* Move the Previous button to the left */
+  }
+  
+  .slick-next {
+    right: -50px !important;  /* Move the Next button to the right */
+  }
+  

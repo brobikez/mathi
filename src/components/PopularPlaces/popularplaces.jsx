@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaCar, FaBriefcase, FaRoute, FaUniversity, FaCaretDown } from 'react-icons/fa';
+import Title from '../Title/Title';
 
 const PopularPlacesNearMe = () => {
   const [dropdownVisible, setDropdownVisible] = useState(null);
@@ -46,21 +47,19 @@ const PopularPlacesNearMe = () => {
 
  
   return (
-    <div className="flex flex-col md:flex-row bg-white py-16">
-      <div className="md:w-1/2 container mx-auto px-4 flex flex-col space-y-8">
-        <h2 className="text-3xl font-bold mb-8 text-center text-black">
-          Popular Places Near Me
-        </h2>
-
+    <div className="md:flex-row bg-white py-4 md:py-10 ">
+      <Title title="popular places near me" />
+      <div className=" w-full md:w-3/4 lg:w-3/5 xl:w-1/2 container mx-auto px-2 sm:px-10 flex flex-col space-y-8 my-8 py-6 bg-orange-50">
+        
         {/* Dropdown Boxes */}
-        <div className="relative" ref={dropdownRefs.first}>
+        <div className="relative " ref={dropdownRefs.first}>
           <div
             className="transform hover:scale-105 transition-transform duration-300 bg-white p-6 rounded-lg shadow-md hover:text-black cursor-pointer"
             onClick={() => toggleDropdown('first')}
           >
             <div className="flex items-center mb-2">
               <FaCar className="text-2xl mr-2" />
-              <h3 className="text-xl font-bold">Travel as Per Your Leisure</h3>
+              <h3 className="text-lg md:text-xl font-bold">Travel as Per Your Leisure</h3>
               <FaCaretDown className="text-xl ml-2" />
             </div>
             <p className="text-gray-600 hover:text-black">Explore destinations at your own pace and convenience.</p>
@@ -88,7 +87,7 @@ const PopularPlacesNearMe = () => {
           >
             <div className="flex items-center mb-2">
               <FaRoute className="text-2xl mr-2" />
-              <h3 className="text-xl font-bold">Discover places frequented by business travelers.</h3>
+              <h3 className="text-lg md:text-xl font-bold">Discover places frequented by business travelers.</h3>
               <FaCaretDown className="text-xl ml-2" />
             </div>
             <p className="text-gray-600 hover:text-black">Find routes for extended journeys and road trips.</p>
@@ -112,7 +111,7 @@ const PopularPlacesNearMe = () => {
           >
             <div className="flex items-center mb-2">
               <FaBriefcase className="text-2xl mr-2" />
-              <h3 className="text-xl font-bold">Visited Often by Professionals</h3>
+              <h3 className="text-lg md:text-xl font-bold">Visited Often by Professionals</h3>
               <FaCaretDown className="text-xl ml-2" />
             </div>
             <p className="text-gray-600 hover:text-black">Longer Drives Are Better.</p>
@@ -140,7 +139,7 @@ const PopularPlacesNearMe = () => {
           >
             <div className="flex items-center mb-2">
               <FaUniversity className="text-2xl mr-2" />
-              <h3 className="text-xl font-bold">Explore Academic Institutions</h3>
+              <h3 className="text-lg md:text-xl font-bold">Explore Academic Institutions</h3>
               <FaCaretDown className="text-xl ml-2" />
             </div>
             <p className="text-gray-600 hover:text-black">Find notable academic institutions in the area.</p>

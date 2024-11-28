@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Steppers.css";
 import { TiTick } from "react-icons/ti";
+import Title from "../Title/Title";
 
 const Steppers = () => {
   const steps = ["Personal Details","Select ride partner", "Vehicle & Rental Details", "Payment Details","Completed "];
@@ -8,10 +9,10 @@ const Steppers = () => {
   const [complete, setComplete] = useState(false);
   return (
     <>
-      <div className="flex flex-col gap-10 items-center justify-center flex-wrap">
-      <h1 className='text-2xl md:text-3xl font-bold text-center p-2'>How to Book</h1>
-      <p className='p-1 text-base md:text-xl text-center'>You're just moments away from starting your thrilling new business journey!"</p>
-      <div className="flex justify-center mx-auto w-full md:w-3/4  mt-4">
+      <div className="flex flex-col items-center justify-center flex-wrap my-3 md:my-6">
+        <Title title="How to Book"/>
+      <p className='p-1 text-base md:text-xl text-center lg:my-8'>You're just moments away from starting your thrilling new business journey!"</p>
+      <div className="flex justify-center mx-auto w-full md:w-3/4 mt-4 md:mt-8">
         {steps?.map((step, i) => (
           <div
             key={i}
